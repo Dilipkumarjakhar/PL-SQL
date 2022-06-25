@@ -49,3 +49,23 @@ BEGIN
 END;
 ```
 ----------------==================================---------------
+
+```
+declare
+num number :=-1;
+name varchar(20) :='dilip';
+--not null default 'go goa gone';
+begin
+if num >10 or name='dilip' then
+dbms_output.put_line('haa ' || num);
+elsif num >20 then 
+dbms_output.put_line(num);
+else
+if num<0 then
+dbms_output.put_line(num);
+else
+dbms_output.put_line(num);
+end if;
+end if;
+end;
+```
