@@ -69,3 +69,17 @@ end if;
 end if;
 end;
 ```
+***when condition***
+```
+declare
+name varchar(20) :='aman';
+v_salary number;
+begin
+v_salary :=case
+when name='dilip' then 0.2
+when name='aman' then 100
+else 0
+end;
+dbms_output.put_line(v_salary);
+end;
+```
