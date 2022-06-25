@@ -11,7 +11,7 @@ BEGIN
 END;
 ```
 -----------------------===================-----------------------
-***
+```
 DECLARE 
     v_text varchar2(50) NOT NULL DEFAULT 'Hello';
     v_number1 number := 50;
@@ -24,7 +24,8 @@ DECLARE
     v_DATE3 timestamp(9) WITH TIME ZONE := systimestamp;
     v_DATE4 interval day(4) to second (3) := '124 02:05:21.012 ';
     v_DATE5 interval year to month := '12-3';
-***
+```
+```
 BEGIN
     V_TEXT := 'PL/SQL' || 'Course';
     DBMS_OUTPUT.PUT_LINE(V_TEXT);
@@ -39,12 +40,16 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE(v_DATE4);
     DBMS_OUTPUT.PUT_LINE(v_DATE5);
     END;
+```
+
 ----------------==================================---------------
 ----------------USING BOOLEAN DATA TYPE in PL/SQL----------------
 ----------------==================================---------------
+```
 DECLARE
     v_boolean boolean := true;
 BEGIN
     dbms_output.put_line(sys.diutil.bool_to_int(v_boolean));
 END;
+```
 ----------------==================================---------------
