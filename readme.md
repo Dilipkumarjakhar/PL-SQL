@@ -1,14 +1,17 @@
-Declaring & Initializing & Using Variables (Code Samples)
+### Declaring & Initializing & Using Variables (Code Samples)
 -----------------------===================-----------------------
 -----------------------DECLARING VARIABLES-----------------------
 -----------------------===================-----------------------
+```
 SET SERVEROUTPUT ON;
 DECLARE 
     v varchar2(20) := 2 + 25 * 3;
 BEGIN
     dbms_output.put_line(v);
 END;
+```
 -----------------------===================-----------------------
+***
 DECLARE 
     v_text varchar2(50) NOT NULL DEFAULT 'Hello';
     v_number1 number := 50;
@@ -21,6 +24,7 @@ DECLARE
     v_DATE3 timestamp(9) WITH TIME ZONE := systimestamp;
     v_DATE4 interval day(4) to second (3) := '124 02:05:21.012 ';
     v_DATE5 interval year to month := '12-3';
+***
 BEGIN
     V_TEXT := 'PL/SQL' || 'Course';
     DBMS_OUTPUT.PUT_LINE(V_TEXT);
