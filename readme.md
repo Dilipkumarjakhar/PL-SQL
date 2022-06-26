@@ -177,9 +177,16 @@ end loop;
 end;
 ```
 output:1:-
-the counter value:1
-the counter value:2
-the counter value:3
+- the counter value:1
+- the counter value:2
+- the counter value:3
 
---------------------------------------------------------------------------
-
+-----------------------------FOR LOOPS-----------------------------
+```
+begin
+  for i in REVERSE 1..3 loop
+    dbms_output.put_line('My counter is : '|| i);
+  end loop;
+end;
+```
+-------------------------------------------------------------------
