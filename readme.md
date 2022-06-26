@@ -168,6 +168,18 @@ begin
 end;
 ```
 -------------------------------------------------------------------------
+***for loop***
+```
+begin
+for i in 1..3 loop
+dbms_output.put_line('the counter value: '|| i)
+end loop;
+end;
+```
+output:1:-
+the counter value:1
+the counter value:2
+the counter value:3
 
-
+--------------------------------------------------------------------------
 
