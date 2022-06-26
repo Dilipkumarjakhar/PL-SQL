@@ -225,3 +225,101 @@ begin
 end;
 ```
 ----------------------------------------------------------------------------------
+***GOTO Statement (Code Samples)***
+------------------------------GOTO STATEMENT----------------------------------
+```
+DECLARE
+  v_searched_number NUMBER := 22;
+  v_is_prime boolean := true;
+BEGIN
+  FOR x in 2..v_searched_number-1 LOOP
+    IF v_searched_number MOD x = 0 THEN
+      dbms_output.put_line(v_searched_number|| ' is not a prime number..');
+      v_is_prime := false;
+      GOTO end_point;
+    END IF;
+  END LOOP;
+  if v_is_prime then
+    dbms_output.put_line(v_searched_number|| ' is a prime number..');
+  end if;
+<<end_point>>
+  dbms_output.put_line('Check complete..');
+END;
+```
+-------------------------------------------------------------------------------
+```
+DECLARE
+  v_searched_number NUMBER := 32457;
+  v_is_prime boolean := true;
+  x number := 2;
+BEGIN
+  <<start_point>>
+    IF v_searched_number MOD x = 0 THEN
+      dbms_output.put_line(v_searched_number|| ' is not a prime number..');
+      v_is_prime := false;
+      GOTO end_point;
+    END IF;
+  x := x+1;
+  if x = v_searched_number then
+   goto prime_point;
+  end if;
+  goto start_point;
+  <<prime_point>>
+  if v_is_prime then
+    dbms_output.put_line(v_searched_number|| ' is a prime number..');
+  end if;
+<<end_point>>
+  dbms_output.put_line('Check complete..');
+END;
+```
+---------------------------------------------------------------------------------
+
+
+***Operating Wİth Selected Queries (Code Samples)***
+------------------------------OPERATING WITH SELECTED QUERIES--------------------------------
+```
+declare
+ v_name varchar2(50);
+ v_salary employees.salary%type;
+begin
+  select first_name ||' '|| last_name, salary into v_name, v_salary  from employees where employee_id = 130;
+  dbms_output.put_line('The salary of '|| v_name || ' is : '|| v_salary);
+end;
+```
+------------------------------
+```
+declare
+ v_name varchar2(50);
+ sysdates employees.hire_date%type;
+begin
+  select first_name ||' '|| last_name, sysdates into v_name, sysdates from employees where employee_id = 130;
+  dbms_output.put_line('The salary of '|| v_name || ' is : '|| sysdates);
+end;
+```
+------------------------------
+```
+declare
+ v_name varchar2(50);
+ v_sysdate employees.hire_date%type;
+ employee_id employees.employee_id%type := 130;
+begin
+  select first_name ||' '|| last_name, sysdate into v_name, v_sysdate from employees where employee_id = employee_id;
+  dbms_output.put_line('The salary of '|| v_name || ' is : '|| v_sysdate );
+end;
+```
+------------------------------
+```
+declare
+ v_name varchar2(50);
+ v_salary employees.salary%type;
+ v_employee_id employees.employee_id%type := 130;
+begin
+  select first_name ||' '|| last_name, salary into v_name, v_salary from employees where employee_id = v_employee_id;
+  dbms_output.put_line('The salary of '|| v_name || ' is : '|| v_salary );
+end;
+```
+------------------------------
+
+
+
+
